@@ -111,6 +111,20 @@ body.light .card {
 /* =========================
    TITLE
 ========================= */
+.subtitle {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 14px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
 h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 38px;
