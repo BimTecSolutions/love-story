@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+
 }
 
 /* 🌙 NIGHT MODE */
@@ -70,15 +71,45 @@ h1 span {
   margin-top: 20px;
 }
 
+/* BIG BEAUTIFUL TIMER BOXES */
 .box {
   flex: 1;
-  padding: 14px;
-  border-radius: 15px;
+  padding: 18px 10px;
+  border-radius: 18px;
   background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  transition: 0.3s ease;
 }
 
+/* DAY MODE */
 body.light .box {
   background: rgba(0,0,0,0.05);
+}
+
+/* BIG NUMBERS */
+.box div {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #ff3b6b;
+}
+
+/* LABELS (HOURS / MIN / SEC) */
+.box span {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0.9;
+}
+
+/* HOVER HIGHLIGHT */
+.box:hover {
+  transform: scale(1.05);
+  background: rgba(255, 59, 107, 0.15);
 }
 
 /* BUTTON */
@@ -139,8 +170,22 @@ button {
   100% { transform: scale(2) translateY(-50px); opacity: 0; }
 }
 
-/* NOTE FIX */
 .noteBox {
-  height: 40px;
-  margin-top: 10px;
+  height: 50px;              /* FIXED HEIGHT */
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FIXED AREA (NO LAYOUT SHIFT) */
+#loveNote {
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.9;
+  text-align: center;
+
+  position: absolute;
+  width: 80%;
+  transition: opacity 0.3s ease;
 }
