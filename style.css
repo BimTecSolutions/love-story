@@ -278,3 +278,31 @@ button {
   opacity: 0.7;
   font-family: 'Arial', sans-serif;
 }
+
+
+/*  Install Button */
+.install-btn{
+margin-top:12px;
+padding:12px 22px;
+border:none;
+border-radius:30px;
+
+background: linear-gradient(135deg,#ff4d8d,#ff2e63);
+color:white;
+
+font-weight:600;
+letter-spacing:.5px;
+
+box-shadow:0 8px 25px rgba(255,46,99,.35);
+
+cursor:pointer;
+transition:.3s;
+}
+
+.install-btn:hover{
+transform:scale(1.05);
+}
+
+body.light .install-btn{
+box-shadow:0 8px 20px rgba(255,105,180,.25);
+}

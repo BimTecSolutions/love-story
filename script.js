@@ -214,3 +214,38 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.log(err));
   });
 }
+
+
+/* install button  */
+
+/* CUSTOM PWA INSTALL */
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+
+  deferredPrompt = e;
+
+  if(installBtn){
+    installBtn.style.display = "inline-block";
+  }
+});
+
+if(installBtn){
+  installBtn.addEventListener("click", async () => {
+
+    if(!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    const choiceResult = await deferredPrompt.userChoice;
+
+    if(choiceResult.outcome === "accepted"){
+      console.log("App installed");
+    }
+
+    deferredPrompt = null;
+    installBtn.style.display = "none";
+  });
+}
