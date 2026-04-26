@@ -5,7 +5,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* DARK ROMANTIC BACKGROUND (better contrast) */
+/* DEFAULT = NIGHT MODE */
 body {
   height: 100vh;
   display: flex;
@@ -13,26 +13,23 @@ body {
   align-items: center;
   background: radial-gradient(circle at top, #2a0f1f, #0d0510);
   overflow: hidden;
+  transition: 0.5s ease;
 }
 
-/* soft glow */
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(255,105,180,0.15), transparent 60%);
+/* DAY MODE */
+body.light {
+  background: linear-gradient(135deg, #ffe6f0, #fff);
 }
 
-/* CENTER FIX (important for mobile) */
+/* CENTER */
 .wrap {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
 }
 
-/* MAIN CARD */
+/* CARD */
 .card {
   width: 92%;
   max-width: 420px;
@@ -40,11 +37,20 @@ body {
   border-radius: 25px;
   text-align: center;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(18px);
-  box-shadow: 0 10px 50px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 50px rgba(0,0,0,0.5);
 
   color: #fff;
+  position: relative;
+  z-index: 5;
+  transition: 0.5s ease;
+}
+
+/* LIGHT CARD */
+body.light .card {
+  background: rgba(255,255,255,0.7);
+  color: #222;
 }
 
 /* TITLE */
@@ -57,38 +63,9 @@ h1 span {
   color: #ff3b6b;
 }
 
-/* subtitle */
-.subtitle {
-  font-size: 13px;
-  opacity: 0.8;
-  margin-top: 5px;
-}
-
-/* label */
-.label {
-  margin-top: 20px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  opacity: 0.7;
-}
-
-/* DAYS BIG */
-.days-box {
-  font-size: 60px;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-.days-box span {
-  display: block;
-  font-size: 12px;
-  opacity: 0.7;
-}
-
 /* TIMER */
 .timer {
   display: flex;
-  justify-content: space-between;
   gap: 10px;
   margin-top: 20px;
 }
@@ -100,22 +77,8 @@ h1 span {
   background: rgba(255,255,255,0.08);
 }
 
-.box div {
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.box span {
-  font-size: 10px;
-  opacity: 0.7;
-  letter-spacing: 1px;
-}
-
-/* since */
-.since {
-  margin-top: 15px;
-  font-size: 12px;
-  opacity: 0.7;
+body.light .box {
+  background: rgba(0,0,0,0.05);
 }
 
 /* BUTTON */
@@ -128,54 +91,49 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
+/* THEME BUTTON */
+.theme-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-size: 18px;
+  z-index: 10;
+  cursor: pointer;
 }
 
-/* FIXED LOVE NOTE BOX (prevents layout jump) */
-.noteBox {
-  height: 40px;
-  margin-top: 10px;
-}
-
-#loveNote {
-  font-style: italic;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* FLOATING HEARTS */
+/* FLOATING HEARTS (MORE FREQUENT) */
 .floating-hearts span {
   position: absolute;
   color: #ff4d6d;
   font-size: 18px;
-  animation: floatUp 8s infinite ease-in;
+  animation: floatUp 6s infinite linear;
+  opacity: 0.8;
 }
-
-.floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
-.floating-hearts span:nth-child(2) { left: 25%; animation-delay: 2s; }
-.floating-hearts span:nth-child(3) { left: 50%; animation-delay: 4s; }
-.floating-hearts span:nth-child(4) { left: 70%; animation-delay: 1s; }
-.floating-hearts span:nth-child(5) { left: 85%; animation-delay: 3s; }
 
 @keyframes floatUp {
   0% { transform: translateY(100vh); opacity: 1; }
   100% { transform: translateY(-10vh); opacity: 0; }
 }
 
-/* HEART BURST */
+/* HEART BURST ON CARD */
 .heart-burst {
-  position: fixed;
-  font-size: 20px;
+  position: absolute;
+  font-size: 18px;
   color: #ff3b6b;
   animation: burst 1s ease-out forwards;
   pointer-events: none;
+  z-index: 20;
 }
 
 @keyframes burst {
   0% { transform: scale(1) translateY(0); opacity: 1; }
-  100% { transform: scale(2) translateY(-80px); opacity: 0; }
+  100% { transform: scale(2) translateY(-60px); opacity: 0; }
 }

@@ -1,5 +1,6 @@
-const startDate = new Date("2025-05-11T00:00:00");
+const startDate = new Date("2026-04-18T00:00:00");
 
+/* COUNTER */
 function updateCounter() {
   const now = new Date();
   const diff = now - startDate;
@@ -18,51 +19,58 @@ function updateCounter() {
 updateCounter();
 setInterval(updateCounter, 1000);
 
-/* 💌 LOVE NOTES */
+/* LOVE NOTES */
 const notes = [
-  "With you, ordinary days become magical 💗",
-  "You are my today and all my tomorrows ❤️",
-  "Our love grows in every passing second 🌸",
-  "Forever began on 11 May 2025 💞",
-  "You are my favorite hello and hardest goodbye 💕"
+  "With you, life feels softer 💗",
+  "You are my forever person ❤️",
+  "Every moment with you is magic ✨",
+  "Our love story is my favorite 💕",
+  "You + Me = Always 💞"
 ];
 
 const loveBtn = document.getElementById("loveBtn");
 const loveNote = document.getElementById("loveNote");
 
-loveBtn.addEventListener("click", () => {
+loveBtn.addEventListener("click", (e) => {
 
   const random = notes[Math.floor(Math.random() * notes.length)];
 
-  // smooth fade effect (no UI jump)
-  loveNote.style.opacity = 0;
+  loveNote.textContent = random;
 
-  setTimeout(() => {
-    loveNote.textContent = random;
-    loveNote.style.opacity = 1;
-  }, 150);
-
-  // 💖 HEART BURST EFFECT
-  createHearts();
+  // 💖 HEARTS ON CARD (NOT BACKGROUND)
+  createCardHearts(e);
 });
 
-/* 💖 HEART BURST FUNCTION */
-function createHearts() {
-  for (let i = 0; i < 12; i++) {
+/* HEARTS ON CARD */
+function createCardHearts(e) {
+  const card = document.querySelector(".card");
+
+  for (let i = 0; i < 18; i++) {
     const heart = document.createElement("div");
     heart.className = "heart-burst";
     heart.textContent = "❤";
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.top = "70vh";
+    const rect = card.getBoundingClientRect();
 
-    const size = Math.random() * 10 + 12;
+    heart.style.left = (Math.random() * rect.width) + "px";
+    heart.style.top = (Math.random() * rect.height) + "px";
+
+    const size = Math.random() * 10 + 10;
     heart.style.fontSize = size + "px";
 
-    document.body.appendChild(heart);
+    card.appendChild(heart);
 
-    setTimeout(() => {
-      heart.remove();
-    }, 1000);
+    setTimeout(() => heart.remove(), 1000);
   }
 }
+
+/* THEME TOGGLE */
+const themeBtn = document.getElementById("themeToggle");
+
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  themeBtn.textContent = document.body.classList.contains("light")
+    ? "☀️"
+    : "🌙";
+});
