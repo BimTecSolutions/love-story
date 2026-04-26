@@ -1,11 +1,22 @@
-self.addEventListener("install", event => {
-  self.skipWaiting();
+const CACHE_NAME = "love-story-v1";
+
+self.addEventListener("install", e => {
+ e.waitUntil(
+   caches.open(CACHE_NAME).then(cache =>
+     cache.addAll([
+       "./",
+       "./index.html",
+       "./style.css",
+       "./script.js",
+       "./image-192.png",
+       "./image-512.png"
+     ])
+   )
+ );
 });
 
-self.addEventListener("activate", event => {
-  event.waitUntil(clients.claim());
-});
-
-self.addEventListener("fetch", event => {
-  event.respondWith(fetch(event.request));
+self.addEventListener("fetch", e => {
+ e.respondWith(
+   caches.match(e.request).then(r => r || fetch(e.request))
+ );
 });

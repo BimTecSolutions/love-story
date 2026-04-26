@@ -203,49 +203,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/*   
-PWA Install access
-*/
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("./service-worker.js")
-      .then(reg => console.log("SW registered"))
-      .catch(err => console.log(err));
-  });
-}
-
-
-/* install button  */
-
-/* CUSTOM PWA INSTALL */
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-
-  deferredPrompt = e;
-
-  if(installBtn){
-    installBtn.style.display = "inline-block";
-  }
-});
-
-if(installBtn){
-  installBtn.addEventListener("click", async () => {
-
-    if(!deferredPrompt) return;
-
-    deferredPrompt.prompt();
-
-    const choiceResult = await deferredPrompt.userChoice;
-
-    if(choiceResult.outcome === "accepted"){
-      console.log("App installed");
-    }
-
-    deferredPrompt = null;
-    installBtn.style.display = "none";
-  });
+/*  PWA Install  */
+if ('serviceWorker' in navigator) {
+ window.addEventListener('load', () => {
+   navigator.serviceWorker.register('./service-worker.js')
+   .then(()=>console.log("SW Registered"))
+   .catch(err=>console.log(err));
+ });
 }
