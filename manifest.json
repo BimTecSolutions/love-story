@@ -1,0 +1,20 @@
+{
+  "name": "Su and Su",
+  "short_name": "Our Love",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8d7e8",
+  "theme_color": "#f8d7e8",
+  "icons": [
+    {
+      "src": "image-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "image-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

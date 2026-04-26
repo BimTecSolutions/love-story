@@ -1,0 +1,66 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+.time-grid div{
+padding:16px 10px;
+border-radius:22px;
+background:rgba(255,255,255,.4);
+}
+
+.time-grid span{
+display:block;
+font-size:clamp(30px,8vw,42px);
+font-weight:700;
+color:#8f2c5d;
+}
+
+.since{
+margin-top:22px;
+font-style:italic;
+color:#7a5870;
+}
+
+button{
+margin-top:24px;
+border:none;
+padding:14px 24px;
+border-radius:999px;
+font-weight:600;
+background:linear-gradient(90deg,#e883b0,#d6649a);
+color:white;
+box-shadow:0 8px 18px rgba(214,100,154,.35);
+}
+
+#loveNote{
+margin-top:16px;
+font-style:italic;
+color:#7b3558;
+min-height:52px;
+}
+
+.floating-hearts span{
+position:fixed;
+font-size:20px;
+opacity:.18;
+animation:rise linear infinite;
+}
+
+.floating-hearts span:nth-child(1){left:8%;animation-duration:15s;bottom:-20px}
+.floating-hearts span:nth-child(2){left:26%;animation-duration:19s;bottom:-30px}
+.floating-hearts span:nth-child(3){left:55%;animation-duration:14s;bottom:-10px}
+.floating-hearts span:nth-child(4){left:74%;animation-duration:18s;bottom:-25px}
+.floating-hearts span:nth-child(5){left:90%;animation-duration:16s;bottom:-15px}
+
+@keyframes rise{
+from{transform:translateY(0)}
+to{transform:translateY(-120vh)}
+}
+
+@media (max-width:420px){
+.hero-card{
+padding:24px 16px;
+}
+}
