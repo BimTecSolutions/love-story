@@ -3,14 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8d7e8">
+<meta name="theme-color" content="#1b0b14">
 
 <title>Sugath ❤️ Sulina</title>
 
 <link rel="manifest" href="manifest.json">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -21,6 +18,7 @@
 
 <div class="bg"></div>
 
+<!-- multiple floating hearts -->
 <div class="floating-hearts">
   <span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span>
 </div>
@@ -29,14 +27,11 @@
 
   <section class="card">
 
-    <div class="top">
-      <h1>Sugath <span>❤</span> Sulina</h1>
-      <p>Every second with you feels like forever 💗</p>
-    </div>
+    <h1>S <span>❤</span> S</h1>
 
-    <div class="counter-title">
-      We’ve been together for
-    </div>
+    <p class="subtitle">Every second with you feels like forever 💗</p>
+
+    <p class="label">We’ve been together for</p>
 
     <div class="days-box">
       <div id="days">0</div>
@@ -44,26 +39,19 @@
     </div>
 
     <div class="timer">
-      <div class="box">
-        <div id="hours">00</div>
-        <span>HOURS</span>
-      </div>
-
-      <div class="box">
-        <div id="minutes">00</div>
-        <span>MINUTES</span>
-      </div>
-
-      <div class="box">
-        <div id="seconds">00</div>
-        <span>SECONDS</span>
-      </div>
+      <div class="box"><div id="hours">00</div><span>HOURS</span></div>
+      <div class="box"><div id="minutes">00</div><span>MIN</span></div>
+      <div class="box"><div id="seconds">00</div><span>SEC</span></div>
     </div>
 
-    <div class="since">Since 11 May 2025</div>
+    <p class="since">Since 11 May 2025</p>
 
     <button id="loveBtn">💌 Tap for Love Note</button>
-    <p id="loveNote"></p>
+
+    <!-- fixed height container (no UI jump) -->
+    <div class="noteBox">
+      <p id="loveNote"></p>
+    </div>
 
   </section>
 
