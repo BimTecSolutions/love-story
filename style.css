@@ -105,7 +105,15 @@ body.light {
 
 /* DAY MODE CARD */
 body.light .card {
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+ 
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.12),
+    0 0 25px rgba(255, 182, 193, 0.3);
 }
 
 /* =========================

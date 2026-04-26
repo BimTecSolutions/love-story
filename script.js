@@ -34,7 +34,109 @@ const notes = [
   "You are my forever ❤️",
   "Every second with you matters ✨",
   "Our love is endless 💕",
-  "You + Me = Always 💞"
+  "You + Me = Always 💞",
+
+  "I still fall for you every single day ❤️",
+  "You are my safe place 🌸",
+  "Even forever is not enough with you 💖",
+  "Your smile is my favorite thing 💕",
+  "I choose you, always and again 💍",
+
+  "You make my world brighter 🌞",
+  "Loving you is my favorite habit 💗",
+  "You are my dream come true ✨",
+  "My heart belongs only to you ❤️",
+  "Every moment with you is special 💞",
+
+  "You are my today and all my tomorrows 💕",
+  "I never want to stop loving you 💖",
+  "You complete my heart ❤️",
+  "You are my sweetest addiction 🍯",
+  "Forever started when I met you 💍",
+
+  "I love you more than words can say 💗",
+  "You are my happiest thought 🌸",
+  "You make my life beautiful 💕",
+  "I’m better because of you ❤️",
+  "You are my favorite hello 💞",
+
+  "I found my home in you 🏡❤️",
+  "You are my heartbeat 💓",
+  "You are my dream I never want to wake from ✨",
+  "I love loving you 💖",
+  "You are my peace 🌙",
+
+  "You are the reason I smile 😊❤️",
+  "You are my universe 🌌",
+  "My heart beats only for you 💓",
+  "You are my forever person 💕",
+  "I adore you endlessly 💖",
+
+  "You are my sunshine on dark days ☀️",
+  "I’m lost in your love ❤️",
+  "You are my lucky charm 🍀",
+  "You make life worth living 💞",
+  "I choose you in every lifetime 💍",
+
+  "You are my sweetest addiction 💗",
+  "I love every version of you ❤️",
+  "You are my favorite place to be 💕",
+  "You are my calm in chaos 🌊",
+  "My heart smiles for you 😊",
+
+  "You are my perfect story 📖❤️",
+  "I love you beyond forever 💞",
+  "You are my missing piece 🧩",
+  "You are my dream come true ✨",
+  "I’m yours completely ❤️",
+
+  "You make my soul happy 💖",
+  "You are my forever happiness 🌸",
+  "I never knew love until you 💕",
+  "You are my greatest blessing 🙏",
+  "I want all my tomorrows with you ❤️",
+
+  "You are my heart’s home 🏡",
+  "I love you deeper every day 💗",
+  "You are my everything 💞",
+  "You are my favorite feeling ❤️",
+  "I’m addicted to your love 💖",
+
+  "You are my forever dream ✨",
+  "You make life worth every second 💕",
+  "You are my eternal love ❤️",
+  "I never want to lose you 💞",
+  "You are my destiny 💍",
+
+  "You are my sweetest memory 🌸",
+  "I fall for you repeatedly ❤️",
+  "You are my heart’s desire 💗",
+  "You are my endless love story 💕",
+  "You are my forever and always 💞",
+
+  "You are my reason to believe in love ❤️",
+  "You are my favorite thought 💖",
+  "You are my safe heaven 🌙",
+  "You are my soul connection ✨",
+  "You are my perfect match 💍",
+
+  "I love you more than yesterday 💗",
+  "You are my beautiful chaos 💕",
+  "You are my calm heart ❤️",
+  "You are my dream reality ✨",
+  "You are my forever magic 💞",
+
+  "You are my love language ❤️",
+  "You are my heart’s melody 🎶",
+  "You are my endless happiness 💖",
+  "You are my sweetest truth 💕",
+  "You are my forever story 💍",
+
+  "You are my everything in one person ❤️",
+  "You are my light in darkness 🌟",
+  "You are my soft place to fall 💗",
+  "You are my heart’s rhythm 💓",
+  "You are my forever home 🏡"
 ];
 
 const loveBtn = document.getElementById("loveBtn");
