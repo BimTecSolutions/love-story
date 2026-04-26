@@ -21,42 +21,39 @@ setInterval(updateCounter, 1000);
 
 /* LOVE NOTES */
 const notes = [
-  "With you, life feels softer 💗",
-  "You are my forever person ❤️",
-  "Every moment with you is magic ✨",
-  "Our love story is my favorite 💕",
+  "With you, life feels magical 💗",
+  "You are my forever ❤️",
+  "Every second with you matters ✨",
+  "Our love is endless 💕",
   "You + Me = Always 💞"
 ];
 
 const loveBtn = document.getElementById("loveBtn");
 const loveNote = document.getElementById("loveNote");
 
-loveBtn.addEventListener("click", (e) => {
+loveBtn.addEventListener("click", () => {
 
   const random = notes[Math.floor(Math.random() * notes.length)];
-
   loveNote.textContent = random;
 
-  // 💖 HEARTS ON CARD (NOT BACKGROUND)
-  createCardHearts(e);
+  createHeartsOnCard();
 });
 
 /* HEARTS ON CARD */
-function createCardHearts(e) {
+function createHeartsOnCard() {
   const card = document.querySelector(".card");
 
-  for (let i = 0; i < 18; i++) {
+  for (let i = 0; i < 20; i++) {
     const heart = document.createElement("div");
     heart.className = "heart-burst";
     heart.textContent = "❤";
 
     const rect = card.getBoundingClientRect();
 
-    heart.style.left = (Math.random() * rect.width) + "px";
-    heart.style.top = (Math.random() * rect.height) + "px";
+    heart.style.left = Math.random() * rect.width + "px";
+    heart.style.top = Math.random() * rect.height + "px";
 
-    const size = Math.random() * 10 + 10;
-    heart.style.fontSize = size + "px";
+    heart.style.fontSize = (10 + Math.random() * 10) + "px";
 
     card.appendChild(heart);
 
@@ -64,13 +61,14 @@ function createCardHearts(e) {
   }
 }
 
-/* THEME TOGGLE */
-const themeBtn = document.getElementById("themeToggle");
+/* THEME SWITCH (FIXED) */
+document.addEventListener("DOMContentLoaded", () => {
+  const themeBtn = document.getElementById("themeToggle");
 
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
 
-  themeBtn.textContent = document.body.classList.contains("light")
-    ? "☀️"
-    : "🌙";
+    themeBtn.textContent =
+      document.body.classList.contains("light") ? "☀️" : "🌙";
+  });
 });
